@@ -1,12 +1,13 @@
 Flat profile:
 
 Each sample counts as 0.01 seconds.
+ no time accumulated
+
   %   cumulative   self              self     total           
- time   seconds   seconds    calls  ms/call  ms/call  name    
- 52.94      0.09     0.09   666752     0.00     0.00  partition
- 29.41      0.14     0.05 13109935     0.00     0.00  swap
- 11.76      0.16     0.02                             main
-  5.88      0.17     0.01        1    10.00   150.00  quickSort
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+  0.00      0.00     0.00    82453     0.00     0.00  swap
+  0.00      0.00     0.00     6696     0.00     0.00  partition
+  0.00      0.00     0.00        1     0.00     0.00  quickSort
 
  %         the percentage of the total running time of the
 time       program used by this function.
@@ -35,7 +36,7 @@ name       the name of the function.  This is the minor sort
 	   in parenthesis it shows where it would appear in
 	   the gprof listing if it were to be printed.
 
-Copyright (C) 2012-2024 Free Software Foundation, Inc.
+Copyright (C) 2012-2022 Free Software Foundation, Inc.
 
 Copying and distribution of this file, with or without modification,
 are permitted in any medium without royalty provided the copyright
@@ -44,25 +45,21 @@ notice and this notice are preserved.
 		     Call graph (explanation follows)
 
 
-granularity: each sample hit covers 4 byte(s) for 5.88% of 0.17 seconds
+granularity: each sample hit covers 4 byte(s) no time propagated
 
 index % time    self  children    called     name
-                                                 <spontaneous>
-[1]    100.0    0.02    0.15                 main [1]
-                0.01    0.14       1/1           quickSort [2]
+                0.00    0.00   82453/82453       partition [2]
+[1]      0.0    0.00    0.00   82453         swap [1]
 -----------------------------------------------
-                             1333504             quickSort [2]
-                0.01    0.14       1/1           main [1]
-[2]     88.2    0.01    0.14       1+1333504 quickSort [2]
-                0.09    0.05  666752/666752      partition [3]
-                             1333504             quickSort [2]
+                0.00    0.00    6696/6696        quickSort [3]
+[2]      0.0    0.00    0.00    6696         partition [2]
+                0.00    0.00   82453/82453       swap [1]
 -----------------------------------------------
-                0.09    0.05  666752/666752      quickSort [2]
-[3]     82.4    0.09    0.05  666752         partition [3]
-                0.05    0.00 13109935/13109935     swap [4]
------------------------------------------------
-                0.05    0.00 13109935/13109935     partition [3]
-[4]     29.4    0.05    0.00 13109935         swap [4]
+                               13392             quickSort [3]
+                0.00    0.00       1/1           main [9]
+[3]      0.0    0.00    0.00       1+13392   quickSort [3]
+                0.00    0.00    6696/6696        partition [2]
+                               13392             quickSort [3]
 -----------------------------------------------
 
  This table describes the call tree of the program, and was sorted by
@@ -147,7 +144,7 @@ index % time    self  children    called     name
  for that member, how many times it was called from other members of
  the cycle.
 
-Copyright (C) 2012-2024 Free Software Foundation, Inc.
+Copyright (C) 2012-2022 Free Software Foundation, Inc.
 
 Copying and distribution of this file, with or without modification,
 are permitted in any medium without royalty provided the copyright
@@ -155,5 +152,4 @@ notice and this notice are preserved.
 
 Index by function name
 
-   [1] main                    [2] quickSort
-   [3] partition               [4] swap
+   [2] partition               [3] quickSort               [1] swap
