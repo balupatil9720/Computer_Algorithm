@@ -1,0 +1,42 @@
+
+System & Hardware Info
+
+uname -a             # Kernel name, version, and architecture
+hostnamectl          # Shows system hostname and hardware info
+lscpu                # CPU architecture and details
+lsblk                # Block devices (disks, partitions)
+lspci                # PCI devices (graphics, network cards, etc.)
+lsusb                # USB devices
+sudo lshw -short     # Complete hardware overview (needs root)   // imp
+
+
+Memory Info
+free -h              # RAM usage in human-readable format
+cat /proc/meminfo    # Detailed memory stats
+vmstat               # Virtual memory statistics
+
+
+
+CPU Info
+
+cat /proc/cpuinfo    # Detailed CPU info
+lscpu                # CPU architecture summary
+top                  # Real-time CPU usage
+htop                 # (if installed) Interactive CPU/Memory monitor
+
+
+Disk & Storage
+df -h                # Mounted filesystem disk usage
+du -sh *             # Size of directories/files in current folder
+lsblk -f             # Filesystem info for disks/partitions
+
+
+Network Configurations
+
+ip addr              # Show all IP addresses
+ifconfig             # (older) Network interfaces and IPs
+ip link              # Show network interfaces
+ss -tulwn            # Listening ports (TCP/UDP)
+ping google.com      # Check connectivity
+traceroute google.com # Show route packets take (needs traceroute)
+
